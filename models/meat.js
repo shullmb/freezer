@@ -11,7 +11,7 @@ const meatSchema = new Schema({
 	quantity: {
 		type: Number
 	},
-	inventory: {
+	servings: {
 		type: Number
 	}
 })

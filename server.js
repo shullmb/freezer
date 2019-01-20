@@ -12,6 +12,8 @@ app.use(cors())
 app.use(express.static(path.join(__dirname, 'client', 'build')))
 app.use(express.json())
 
+app.use('/api/v1/meats', require('./routes/meats'))
+
 app.get('*', (req,res) => {
 	res.send('up and running')
 })
