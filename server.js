@@ -2,6 +2,7 @@ require('dotenv').config()
 const express = require('express')
 const path = require('path')
 const cors = require('cors')
+const colors = require('colors')
 const port = process.env.PORT || 3001;
 
 const app = express();
@@ -15,7 +16,7 @@ app.use(express.json())
 app.use('/api/v1/meats', require('./routes/meats'))
 
 app.get('*', (req,res) => {
-	res.send('up and running')
+	res.sendFile(path.join(__dirname,'client','build','index.html'))
 })
 
-app.listen(port, () => console.log( `serving 🥩 🥩 🥩  on ${port}`))
+app.listen(port, () => console.log( `💻 => serving 🥩  on ${port.bold.red}`))

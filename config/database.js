@@ -1,7 +1,10 @@
 const mongoose = require('mongoose');
-console.log('here')
+const colors = require('colors');
+
 mongoose.connect(process.env.MONGODB_URI, {useNewUrlParser: true})
 
 const db = mongoose.connection;
 
-db.once('open', () => { console.log(`Connected to ${db.name} at ${db.host}:${db.port}`)})
+db.once('open', () => { 
+	console.log(`🛢  => connected to ${db.name.bold.underline.cyan} at ${db.host.underline.green}:${db.port.toString().underline.green}`)
+})
