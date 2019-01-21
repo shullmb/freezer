@@ -13,7 +13,16 @@ const meatSchema = new Schema({
 	},
 	servings: {
 		type: Number
+	},
+	reserved: {
+		type: Boolean,
+		default: false
 	}
+},{
+	timestamps: {
+		createdAt: "stockDate"
+	},
+	versionKey: false
 })
 
 module.exports = mongoose.model('Meat', meatSchema);
